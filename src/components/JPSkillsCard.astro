@@ -1,0 +1,41 @@
+---
+interface Props {
+    title: string;
+    image: string;
+}
+const { title, image } = Astro.props;
+
+---
+<li>
+    <div>
+        <img
+            height="120"
+            width="120"
+            src={image}
+            alt="Tigris Data"
+            title={title}
+            loading="lazy"
+        />
+        <h3>{title}</h3>
+    </div>
+</li>
+
+<style>
+    img {
+        filter: opacity(0.3);
+        transition: filter .5s;
+    }
+    img:hover {
+        filter: opacity(1);
+        -webkit-filter: drop-shadow(0 0 30px var(--green));
+        filter: drop-shadow(0 0 30px var(--green));
+    }
+    div {
+        display: block;
+    }
+    h3 {
+        font-family: var(--syne);
+        margin: auto;
+        text-align: center;
+    }
+</style>

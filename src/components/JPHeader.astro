@@ -1,0 +1,55 @@
+<header>
+    <nav>
+        <ul>
+            <li><a href="sass.html">home</a></li>
+            <li><a href="badges.html">portafolio</a></li>
+            <li><a href="collapsible.html">proyectos</a></li>
+            <li><a href="collapsible.html">contact</a></li>
+            <li>
+                <a href="collapsible.html">Descarga CV</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+<style>
+    header {
+        display: flex;
+    }
+	nav {
+		display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        width: 100%;
+        padding: 2rem 0;
+	}
+	ul {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		white-space: nowrap;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		padding-right: 2.5rem;
+        gap: 50px;
+	}
+	li {
+		display: flex;
+		align-items: center;
+		margin: 0;
+		text-transform: lowercase;
+		overflow: hidden;
+	}
+	a {
+        font-family: var(--syne);
+        color: var(--nav-link);
+        text-decoration: none;
+        border-bottom: 2px solid transparent;
+		font-weight: 700;
+		font-size: 16px;
+	}
+    a:hover {
+        border-color: var(--nav-link);
+    }
+</style>

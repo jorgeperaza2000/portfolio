@@ -14,28 +14,76 @@ const { title } = Astro.props;
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Syne:wght@500;700&display=swap" rel="stylesheet">
 		<title>{title}</title>
 	</head>
-	<body>
+	<body data-theme="dark">
 		<slot />
 	</body>
 </html>
 <style is:global>
-	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
+	body {
+		display: flex;
+		flex-direction: column;
+		margin: 0;
+		padding: 0;
+		color: var(--text);
+		font-family: var(--inter);
+		background: var(--bg) url(images/header.png) no-repeat;
+		background-size: auto;
+		background-position: center -30%;
+		height: 100vh;
 	}
-	html {
-		font-family: system-ui, sans-serif;
-		background: #13151a;
-		background-size: 224px;
+	:root {
+		--dark: rgb(38, 38, 38);
+		--light: rgb(255, 254, 254);
+		--green: rgb(26, 219, 187);
+		--blue: rgb(20, 165, 237);
+		--purple: rgb(127, 100, 251);
+		--pink: rgb(243, 50, 101);
+		--yellow: rgb(255, 175, 132);
+		--orange: rgb(255, 118, 108);
+		--gray: rgb(119, 119, 119);
+		--bg-dark: rgb(18, 20, 22);
+		--green-fade: rgba(26, 219, 187, .2);
+		--blue-fade: rgba(20, 165, 237, .2);
+		--purple-fade: rgba(127, 100, 251, .2);
+		--pink-fade: rgba(243, 50, 101, .2);
+		--yellow-fade: rgba(255, 175, 132, .2);
+		--orange-fade: rgba(255, 118, 108, .2);
+		--gray-fade: rgba(119, 119, 119, .2);
+		--gradient: linear-gradient( to right, var(--green), var(--blue), var(--purple), var(--pink), var(--yellow), var(--orange) );
+		--gradient-vert: linear-gradient( to bottom, var(--green), var(--blue), var(--purple), var(--pink), var(--yellow), var(--orange) );
+		--gradient-fade: linear-gradient( to right, var(--green-fade), var(--blue-fade), var(--purple-fade), var(--pink-fade), var(--yellow-fade), var(--orange-fade) );
+		--glass-dark: #0E1012; /*rgba(0, 0, 0, .2);*/
+		--glass-light: rgba(38, 38, 38, .06);
+		--shadow-dark: 0 0 10px rgba(0, 0, 0, .25);
+		--shadow-light: 0 0 10px rgba(0, 0, 0, .75);
+		--syne: "Syne", sans-serif;
+		--inter: "Inter", sans-serif;
+	}
+	[data-theme=dark] {
+		--gradient: linear-gradient( to right, var(--green), var(--blue), var(--purple), var(--pink), var(--yellow), var(--orange) );
+		--bg: var(--bg-dark);
+		--text: var(--light);
+		--glass: var(--glass-dark);
+		--shadow: var(--shadow-light);
+		--link: var(--blue);
+		--link-hover: var(--green);
+		--nav-link: var(--light);
+		--nav-link-hover: var(--green);
+		--socials-link: var(--light);
+		--socials-link-hover: var(--green);
+		--flip-filter: invert(0) contrast(85%) hue-rotate(0deg);
+		--toc-link-active: var(--light);
+		--article-table-th: var(--dark);
+		--footer-link: var(--light);
+		--footer-link-hover: var(--green);
+		--footer-socials-link: var(--light);
+		--footer-socials-link-hover: var(--green);
+		--footer-color: var(--light);
 	}
 	code {
 		font-family:

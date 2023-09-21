@@ -1,0 +1,65 @@
+---
+import JPSkillsCard from "../components/JPSkillsCard.astro";
+
+const skills = [
+    {
+        name: 'PHP',
+        image: 'images/skills/php.png',
+    },
+    {
+        name: 'Laravel',
+        image: 'images/skills/laravel.png',
+    },
+    {
+        name: 'Vue',
+        image: 'images/skills/vuejs.svg',
+    },
+    {
+        name: 'React',
+        image: 'images/skills/react.svg',
+    },
+    {
+        name: 'Astro',
+        image: 'images/skills/astro.svg',
+    },
+    {
+        name: 'MySQL',
+        image: 'images/skills/mysql.png',
+    },
+];
+---
+<section>
+	<div class="container" >
+		<ul>
+            {skills.map((skill) => (
+                    <JPSkillsCard title={skill.name} image={skill.image}></JPSkillsCard>
+                )
+            )}
+		</ul>
+	</div>
+</section>
+<style>
+	section {
+		background-color: var(--glass);
+		padding: 3rem 0;
+        position: relative;
+        z-index: 1;
+	}
+    .container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        max-width: 1536px;
+        margin: auto;
+    }
+    ul {
+        flex-direction: row;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        gap: 2rem;
+        margin: 0;
+        padding: 0 1rem;
+        list-style: none;
+    }
+</style>
